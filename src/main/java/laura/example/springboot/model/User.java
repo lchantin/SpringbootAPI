@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Entity representing the "user" table stored in BDD. The phone number and a gender are optional to create an user.
+ */
 @Entity
 @Data
 @Table(name = "user")
@@ -32,6 +35,4 @@ public class User {
     @Enumerated(EnumType.STRING)
     private EGender gender;
 
-    @Transient
-    private int age;
 }

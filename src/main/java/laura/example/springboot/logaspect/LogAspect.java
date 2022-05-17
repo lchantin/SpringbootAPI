@@ -11,6 +11,9 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
+/**
+ * Class allowing to display logs at the beginning, at the end and calculating the processing time of a method.
+ */
 @Aspect
 @Component
 @Slf4j
@@ -20,7 +23,6 @@ public class LogAspect {
     public void start (JoinPoint joinPoint){
         log.info("Called method {} ",joinPoint.toShortString());
     }
-
 
     @Around("execution(* laura.example.springboot.service.UserService.*(..))")
     public Object superviser(ProceedingJoinPoint joinPoint)
@@ -33,11 +35,8 @@ public class LogAspect {
         Object result = joinPoint.proceed();
         stopWatch.stop();
 
-
-        log.info("Execution time of "
-                + methodSignature.getDeclaringType().getSimpleName() // Class Name
-                + "." + methodSignature.getName() + " " // Method Name
-                + "--> " + stopWatch.getTotalTimeMillis() + " ms");
+        log.info(String.format("Execution time of  %s.%s ==> %s ", methodSignature.getDeclaringType().getSimpleName(),
+                methodSignature.getName(), stopWatch.getTotalTimeMillis()));
 
         return result;
     }
@@ -46,6 +45,4 @@ public class LogAspect {
     public void stop (JoinPoint joinPoint){
         log.info("End of call method {} ",joinPoint.toShortString());
     }
-
-
 }
