@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @ComponentScan({"laura.example.springboot.controller","laura.example.springboot.service","laura.example.springboot.logaspect"})
-@EnableAutoConfiguration
 @EnableAspectJAutoProxy
 public class SpringbootapiApplication {
 
