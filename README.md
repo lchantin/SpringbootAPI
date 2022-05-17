@@ -15,7 +15,7 @@ A user is defined by:
 
 Only adult French residents are allowed to create an account.
 
-##How to install and run the project
+## How to install and run the project
 
 1. Copy the path https://github.com/lchantin/SpringbootAPI.git.
 
