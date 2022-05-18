@@ -15,11 +15,11 @@ A user is defined by:
 
 Only adult French residents are allowed to create an account.
 
-##How to install and run the project
+## How to install and run the project
 
 1. Copy the path https://github.com/lchantin/SpringbootAPI.git.
 
-    ![img_1.png](img_1.png)
+    ![img_1.png](src/main/resources/images/CloneRepo.png)
 
 2. Open your IDE (IntelliJ) and copy this path to import the project.
 3. Checkout on the main branch.
@@ -27,4 +27,11 @@ Only adult French residents are allowed to create an account.
 
 ## How to use the API
 
-link swagger
+Go to the link http://localhost:8088/swagger-ui/ to see the different HTTP requests that can be executed. 
+
+* To create a user, simply select the POST /users/saveuser method and click on "Try it out" to complete the body containing the user's information and send the request.
+
+   ![img.png](src/main/resources/images/postRequestExample.png)
+
+* To show all users, select the GET /users/getusers method and click on "Try it out" and send the request.
+* It's the same for others requests.
